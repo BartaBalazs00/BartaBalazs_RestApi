@@ -26,6 +26,9 @@ public class RequestTask extends AsyncTask<Void, Void, Response> {
     @Override
     protected void onPostExecute(Response response) {
         super.onPostExecute(response);
+        if (response == null) {
+            return;
+        }
         textViewOrszagok.setText(response.getContent());
     }
 }
