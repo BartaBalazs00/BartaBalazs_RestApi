@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class ListResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list_result);
         init();
 
+        textViewOrszagok.setMovementMethod(new ScrollingMovementMethod());
         RequestTask task = new RequestTask(textViewOrszagok);
         task.execute();
 
